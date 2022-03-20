@@ -1,0 +1,252 @@
+//====================================================================================================
+
+header {
+	height: 75px;
+	.header__container {
+		display: flex;
+		height: 100%;
+		background-color: #20484F;
+		justify-content: space-between;
+		padding: 0 5%;
+		align-items: center;
+		.header__logo {
+			z-index: 10;
+		}
+		.header__menu {
+			display: flex;
+			flex: 1 1 auto;
+			justify-content: center;
+			.menu__body{
+				width: 100%;
+			
+				.menu__list {
+					display: flex;
+					justify-content: center;
+					flex: 1 1 auto;
+
+					li {
+						margin: 0 16px;
+					}
+
+					.menu__link {
+						color: #fff;
+						font-style: normal;
+						font-weight: 400;
+						font-size: 16px;
+						line-height: 150%;
+						transition: all 0.3s ease;
+
+						&:hover {
+							color: #B8E4DA;
+						}
+					}
+				}
+			}
+		}
+
+		.header__inputs {
+			z-index: 10;
+			display: flex;
+			flex-direction: row;
+			
+			input {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 150%;
+				outline: none;
+				border-radius: 8px;
+				padding: 10px 16px;
+				background-color: transparent;
+				color: #fff;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-transform: capitalize;
+
+				&:hover {
+					color: #20484F;
+					background-color: #B8E4DA;
+				}
+
+			}
+
+		}
+
+	}
+}
+
+
+//====================================================================================================
+@media (max-width: 767px) {
+	 header {
+		.header__container {
+
+			.header__logo {
+				order: 2; 
+				margin: auto;
+			}
+			.header__menu {
+				order: 1;
+				flex: 0 0 ;
+				.menu__icon {
+					z-index: 5;
+					display: block;
+					position: relative;
+					width: 30px;
+					height: 18px;
+					cursor: pointer;
+				}
+				.menu__icon span,
+				.menu__icon::before,
+				.menu__icon::after {
+					left: 0;
+					position: absolute;
+					height: 10%;
+					width: 100%;
+					transition: all 0.3s ease 0s;
+					background-color: #fff;
+				}
+				.menu__icon::before,
+				.menu__icon::after {
+					content: "";
+				}
+				.menu__icon::before {
+						top: 0;
+				}
+				.menu__icon::after {
+					bottom: 0;
+				}
+				.menu__icon span {
+					top: 50%;
+					transform: scale(1) translate(0px, -50%);
+				}
+		
+				.menu__icon._active span {
+					transform: scale(0) translate(0px, -50%);
+				}
+				.menu__icon._active::before {
+					top: 50%;
+					transform: rotate(-45deg) translate(0px, -50%);
+				}
+				.menu__icon._active::after {
+					bottom: 50%;
+					transform: rotate(45deg) translate(0px, 50%);
+				}
+				.menu__body {
+					position: fixed;
+					top: 0;
+					left: +120%;
+					width: 100%;
+					height: 100%;
+					background-color: #20484F;
+					opacity: 0.8;
+					padding: 150px 30px 30px 30px;
+					transition: left 0.3s ease 0s;
+					overflow: auto;
+				}
+				.menu__body._active {
+					left: 0;
+		
+					.menu__list {
+						flex-direction: column;
+						align-items: center;
+					}
+					.menu__list > li {
+						flex-wrap: wrap;
+						margin: 0px 0px 30px 0px;
+					}
+					.menu__list > li:last-child {
+						margin-bottom: 0;
+					}
+					.menu__list > li._active .menu__sub-list {
+						display: block;
+					}
+					.menu__link {
+						font-size: 24px;
+						text-transform: uppercase;
+			
+						&:hover {
+							color: #fff;
+						}
+					}
+				}
+			
+				.menu__body::before {
+					content: "";
+					position: fixed;
+					width: 100%;
+					top: 0;
+					left: 0;
+					height: 75px;
+					background-color:#20484F;
+					z-index: 2;
+				}	
+			}
+			.header__inputs {
+				order: 3;
+
+
+				.input__sign_up {
+					color: #20484F;
+					background-color: #B8E4DA;
+				}
+				.input__log_in {
+					
+					&:hover {
+						background-color: transparent;
+						color: #fff;
+					}
+
+				}
+			}	
+		}
+	 }
+}
+
+
+//=====================================================================================================
+/*
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 10px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+			transition: all 0.3s ease 0s;
+			top: calc(50% - 1px);
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
+*/
