@@ -231,6 +231,35 @@ body {
 	}
 }
 
+.company__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 41px 0 66px;
+
+	.company__title {
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 150%;
+		text-align: center;
+
+	}
+	.company__logo_group {
+		display: flex;
+		margin-top: 46px;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		width: 100%;
+		
+		.company__logo {
+			// margin: 0 44px;
+			// width: 25%;
+			height: auto;
+		}
+	}
+}
+
 // ===== responsive fonts ==================================================================================================
 @media (max-width: 1250px) {
 
@@ -263,6 +292,31 @@ body {
 			width: 100%;
 			display: flex;
 			align-items: center;
+		}
+	}
+
+	.company__container {
+		padding: 20px 5%;
+
+		.company__logo_group {
+			.company__logo {
+				width: 20%;
+				margin: 5px auto;
+				// height: 35px;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+
+	.company__container {
+		.company__logo_group {
+			.company__logo {
+				width: 45%;
+				margin: 5px auto;
+				
+			}
 		}
 	}
 }

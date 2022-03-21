@@ -1125,6 +1125,30 @@ header .header__container .header__menu .menu__icon::after {
   bottom: -18%;
 }
 
+.company__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 41px 0 66px;
+}
+.company__container .company__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+}
+.company__container .company__logo_group {
+  display: flex;
+  margin-top: 46px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.company__container .company__logo_group .company__logo {
+  height: auto;
+}
+
 @media (max-width: 1250px) {
   .hero__container .hero__text .hero__title {
     font-size: calc(20px + 44 * (100vw - 320px) / 880);
@@ -1146,5 +1170,19 @@ header .header__container .header__menu .menu__icon::after {
     width: 100%;
     display: flex;
     align-items: center;
+  }
+
+  .company__container {
+    padding: 20px 5%;
+  }
+  .company__container .company__logo_group .company__logo {
+    width: 20%;
+    margin: 5px auto;
+  }
+}
+@media (max-width: 500px) {
+  .company__container .company__logo_group .company__logo {
+    width: 45%;
+    margin: 5px auto;
   }
 }
