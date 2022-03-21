@@ -146,6 +146,7 @@ header {
 				}
 				.menu__body._active {
 					left: 0;
+					z-index: 4;
 		
 					.menu__list {
 						flex-direction: column;
